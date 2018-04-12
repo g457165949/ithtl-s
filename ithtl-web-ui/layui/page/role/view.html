@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+
+<form class="layui-form" style="width:100%;">
+<div class="layui-form-item layui-row layui-col-xs12">
+	<input id="roleId" type="hidden">
+	<input name="ids" type="hidden">
+	<label class="layui-form-label"></label>
+	<div id="tree">
+		<el-input style="width:70%;float: left;"
+				  placeholder="输入关键字进行过滤"
+				  v-model="filterText">
+		</el-input>
+		&nbsp;
+		<el-button id="reset" @click="setCheckedNodes" style="width:25%;">复原</el-button>
+		<el-tree
+				class="filter-tree"
+				:data="data2"
+				:props="defaultProps"
+				node-key="id"
+				:filter-node-method="filterNode"
+				:expand-on-click-node="false"
+				default-expand-all
+				show-checkbox
+				@check="getCheckedKeys"
+				ref="tree">
+		</el-tree>
+
+	</div>
+</div>
+</form>
+
+<script src="../../assets/jquery.js"></script>
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script inline="javascript">
+	function showTree() {
+        $.get("/api/role/view/"+$("#roleId").val(), function (res) {
+            var menus = res["data"]["menuItems"];
+            var nodeList = res["data"]["nodeList"];
+            new Vue({
+                el: '#tree',
+                watch: {
+                    filterText: function (val) {
+                        this.$refs.tree.filter(val);
+                    }
+                },
+                methods: {
+                    filterNode: function (value, data) {
+                        if (!value) return true;
+                        return data.label.indexOf(value) !== -1;
+                    },
+                    getCheckedKeys: function(data) {
+                        $("input[name='ids']").val(this.$refs.tree.getCheckedKeys().toString());
+                    },
+                    setCheckedNodes: function () {
+                        this.$refs.tree.setCheckedNodes(nodeList);
+                    }
+                },
+                data: {
+                    filterText: '',
+                    data2: menus,
+                    defaultProps: {
+                        children: 'childPermissions',
+                        label: 'name'
+                    }
+                }
+            })
+            $("#reset").click();
+        })
+    }
+</script>
+</body>
+</html>

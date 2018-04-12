@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>菜单编辑</title>
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+	<form class="layui-form" style="width:80%;">
+		<input type="hidden" name="id" id="id">
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">菜单名</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input name" lay-verify="required" placeholder="请输入权限名">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">路由</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input url" lay-verify="required" placeholder="例如：/user/create">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">上级菜单</label>
+			<div class="layui-input-block">
+				<input type="hidden" class="layui-input parentId">
+				<input type="text" class="layui-input parentName">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">类型</label>
+			<div class="layui-input-block type">
+				<input type="radio" name="type" value="1" title="菜单">
+				<input type="radio" name="type" value="2" title="按钮" checked>
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">授权标识</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input perms" placeholder="多个请用，隔开 user:list,user:create">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">数据</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入json数据" class="layui-textarea data"></textarea>
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">排序</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input sort" lay-verify="required" value="100" placeholder="请输入序号">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">描述</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入权限描述" class="layui-textarea description"></textarea>
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<div class="layui-input-block">
+				<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addData">立即添加</button>
+				<button class="layui-btn layui-btn-sm layui-btn-primary">关闭</button>
+			</div>
+		</div>
+
+	</form>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="/js/permission/permissionAdd.js"></script>
+</body>
+</html>

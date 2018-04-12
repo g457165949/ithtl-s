@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>角色编辑</title>
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+	<form class="layui-form" style="width:80%;">
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">角色名</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input name" lay-verify="required" placeholder="请输入角色名">
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">描述</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入角色描述" class="layui-textarea description"></textarea>
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<label class="layui-form-label">数据</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入json格式数据" class="layui-textarea data"></textarea>
+			</div>
+		</div>
+		<div class="layui-form-item layui-row layui-col-xs12">
+			<div class="layui-input-block">
+				<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addData">立即添加</button>
+				<button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="/js/role/roleAdd.js"></script>
+</body>
+</html>

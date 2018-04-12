@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+
+<div class="layui-form-item layui-row layui-col-xs12">
+    <input name="parentId" type="hidden">
+    <input name="parentName" type="hidden">
+    <label class="layui-form-label"></label>
+    <div id="tree">
+        <el-input style="width:100%"
+                  placeholder="输入关键字进行过滤"
+                  v-model="filterText">
+        </el-input>
+
+        <el-tree
+                class="filter-tree"
+                :data="data2"
+                :props="defaultProps"
+                :filter-node-method="filterNode"
+                :expand-on-click-node="false"
+                @node-click="handleNodeClick"
+                ref="tree2">
+        </el-tree>
+    </div>
+</div>
+
+<script src="../../assets/jquery.js"></script>
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    $.get("/api/permission/items", {}, function (res) {
+        var menus = res["data"];
+        new Vue({
+            el: '#tree',
+            watch: {
+                filterText: function (val) {
+                    this.$refs.tree2.filter(val);
+                }
+            },
+            methods: {
+                filterNode: function (value, data) {
+                    if (!value) return true;
+                    return data.label.indexOf(value) !== -1;
+                },
+                handleNodeClick: function(data) {
+                    $("input[name='parentId']").val(data.id);
+                    $("input[name='parentName']").val(data.name);
+                }
+            },
+            data: {
+                filterText: '',
+                data2: menus,
+                defaultProps: {
+                    children: 'childPermissions',
+                    label: 'name'
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

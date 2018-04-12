@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户编辑</title>
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+	<input type="hidden" id="uid">
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">登录名</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input userName" lay-verify="required" placeholder="请输入登录名">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">昵称</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input nickName" lay-verify="required" placeholder="请输入昵称">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">邮箱</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input userEmail" lay-verify="email" placeholder="请输入邮箱">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">密码</label>
+		<div class="layui-input-block">
+			<input type="password" class="layui-input userPassword" lay-verify="password" placeholder="请输入密码">
+		</div>
+	</div>
+	<div class="layui-row">
+		<div class="magb15 layui-col-md4 layui-col-xs12">
+			<label class="layui-form-label">会员状态</label>
+			<div class="layui-input-block">
+				<select name="userStatus" class="userStatus" lay-filter="userStatus">
+					<option value="0">限制用户</option>
+					<option value="1">正常使用</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">角色</label>
+		<div class="layui-input-block roleList">
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">用户简介</label>
+		<div class="layui-input-block">
+			<textarea placeholder="请输入用户简介" class="layui-textarea description"></textarea>
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+			<button class="layui-btn layui-btn-sm" lay-submit="" lay-filter="addUser">立即添加</button>
+			<button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">取消</button>
+		</div>
+	</div>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="/js/user/userAdd.js"></script>
+</body>
+</html>
