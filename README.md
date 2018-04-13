@@ -6,7 +6,8 @@
 [SpringBoot+thymeleaf前后端不分离](https://github.com/g457165949/ithtl-base)
 
 # 目的
-学习并使用JAVA框架SpringBoot来开发。（QQ:457165949）
+学习并使用JAVA框架SpringBoot来开发，后续会新增SpringCloud，未完待更新。。。（QQ:457165949）
+
 
 # 推荐博客
 * [Layui](http://www.layui.com/)
