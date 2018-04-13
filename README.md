@@ -7,4 +7,17 @@
 
 # dome
 
- ![image](http://github.com/g457165949/ithtl-s/tree/master/doc/WechatIMG1.jpeg)
+登录页面
+ ![image](https://github.com/g457165949/ithtl-s/blob/master/doc/登录.jpeg)
+
+用户页面
+![image](https://github.com/g457165949/ithtl-s/blob/master/doc/用户.png)
+
+权限页面
+ ![image](https://github.com/g457165949/ithtl-s/blob/master/doc/菜单管理.png)
+ 
+角色页面
+![image](https://github.com/g457165949/ithtl-s/blob/master/doc/角色管理.png)
+
+日志页面
+![image](https://github.com/g457165949/ithtl-s/blob/master/doc/操作日志.png)
