@@ -6,7 +6,7 @@
 学习并使用JAVA框架SpringBoot来开发。（QQ:457165949）
 
 # 推荐博客
-* [Spring boot 基础搭建](http://ithtl.com) 
+* [Spring boot 基础搭建](http://www.ithtl.com/?p=766) 
 * [纯洁的微笑](http://www.ityouknow.com/spring-boot.html)
 * [简书Springboot专题](https://www.jianshu.com/c/f0cf6eae1754)
 * [方志朋Spring Boot 专栏](https://blog.csdn.net/column/details/15397.html)
