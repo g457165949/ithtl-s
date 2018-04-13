@@ -1,11 +1,15 @@
 # ithtl-s
-后台权限管理系统
-本项目是完全基于SpringBoot 1.5、Shiro、Layui、Vue 前后端分离项目，前端使用Nginx服务，Ajax接口/api进行接口转发服务端。
+后台权限管理系统（多模块版本）
+本项目是完全基于SpringBoot 1.5、Shiro、Layui、Vue 前后端分离项目，前端使用Nginx服务，使用Ajax调用后端服务接口。
+
+# 基础版本
+[SpringBoot+thymeleaf前后端不分离](https://github.com/g457165949/ithtl-base)
 
 # 目的
 学习并使用JAVA框架SpringBoot来开发。（QQ:457165949）
 
 # 推荐博客
+* [Layui](http://www.layui.com/)
 * [Spring boot 基础搭建](http://www.ithtl.com/?p=766) 
 * [纯洁的微笑](http://www.ityouknow.com/spring-boot.html)
 * [简书Springboot专题](https://www.jianshu.com/c/f0cf6eae1754)
