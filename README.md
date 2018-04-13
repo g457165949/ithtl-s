@@ -11,6 +11,19 @@
 * [简书Springboot专题](https://www.jianshu.com/c/f0cf6eae1754)
 * [方志朋Spring Boot 专栏](https://blog.csdn.net/column/details/15397.html)
 
+# Nginx配置
+        #添加头部信息
+        proxy_set_header Cookie $http_cookie;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        
+        #添加拦截路径和代理地址
+        location /api/ {              
+               proxy_pass http://localhost:8080/;  #注意：使用代理地址时末尾记得加上斜杠"/"。      
+        }
+
+
 # 页面展示
 
 登录页面
