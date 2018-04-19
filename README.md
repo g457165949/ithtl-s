@@ -28,9 +28,10 @@
                proxy_pass http://localhost:8080/;  #注意：使用代理地址时末尾记得加上斜杠"/"。      
         }
 
+# 登录账号
+账号：admin 密码：123456
 
 # 页面展示
-
 登录页面
  ![image](https://github.com/g457165949/ithtl-s/blob/master/doc/登录.jpeg)
 
